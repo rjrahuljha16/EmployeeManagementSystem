@@ -12,7 +12,7 @@
 
 		<div>
 
-			<form>
+			<form action="#" method="post">
 				<h2><p align="center">Sign In</p><h2>
 
 				<div class="input-container">
@@ -29,7 +29,7 @@
 
 			</form>
 		</div>
-		<div class="modal-footer">Don't have an account? <a href="#">Create one</a></div>
+		<div class="modal-footer">Don't have an account? <a href="registration.jsp">Create one</a></div>
 	</div>
 
 </body>
