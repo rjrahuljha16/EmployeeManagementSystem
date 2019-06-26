@@ -8,11 +8,12 @@
 <link rel="stylesheet" type="text/css" href="css\loginpagecss.css">
 </head>
 <body>
+<% %>
 	<div class="main">
 
 		<div>
 
-			<form action="#" method="post">
+			<form action="LoginServlet" method="post">
 				<h2><p align="center">Sign In</p><h2>
 
 				<div class="input-container">

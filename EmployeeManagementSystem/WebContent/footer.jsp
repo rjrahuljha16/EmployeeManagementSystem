@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Employee Management System</title>
-	<style type="text/css">
-		.footer{
-			position: absolute;
-			bottom: 0%;
-			left: 0%;
-			width: 100%;
-			text-align: center;
-			background-color:  #00e6e6
-		}
-
-	</style>
+<title>Employee Management System</title>
+<style type="text/css">
+.footer {
+	position: absolute;
+	bottom: 0%;
+	left: 0%;
+	width: 100%;
+	text-align: center;
+	background-color: #00e6e6
+}
+</style>
 </head>
 <body>
 	<div class="footer">

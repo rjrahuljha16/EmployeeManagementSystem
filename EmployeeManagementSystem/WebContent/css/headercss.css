@@ -1,0 +1,65 @@
+form {
+	border: 3px solid #f1f1f1;
+}
+
+.header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #00e6e6;
+	color: black;
+	text-align: center;
+	height: 50px;
+}
+
+.logoutLblPos {
+	padding: 10px 20px;
+	position: fixed;
+	right: 15px;
+	top: 25px;
+	background-color: black;
+}
+
+.dropbtn {
+	background-color: #80e5ff;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	right: 130px;
+	top: 1px;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #80e5ff;
+	min-width: 100px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #80e5ff;
+}

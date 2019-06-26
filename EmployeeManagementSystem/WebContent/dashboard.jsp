@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +15,12 @@
 	top: 10%;
 	left: 28%;
 }
-.menulink{
-position:absolute;
-top:20%;
+
+.menulink {
+	position: absolute;
+	top: 20%;
 }
+
 a:link, a:visited {
 	background-color: white;
 	color: black;
@@ -39,9 +45,9 @@ a:hover, a:active {
 	<%@include file="dropdown.html"%>
 
 	<div class="menulink">
-	
-		<a href="addemployee.jsp">Register New Employee</a><br> 
-		<a href="TableServlet">List of All Employees</a>
+
+		<a href="addemployee.jsp">Register New Employee</a><br> <a
+			href="TableServlet">List of All Employees</a>
 	</div>
 
 	<div class="tabledata">
@@ -54,10 +60,10 @@ a:hover, a:active {
 				<tr>
 					<th>Emp ID</th>
 					<th>Name</th>
-					<th>Date of joining</th>
-					<th>Date of birth</th>
+					<th>Mobile</th>
 					<th>Department</th>
-					<th>Designation</th>
+					<th>Staus</th>
+					<th>Email</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -65,15 +71,15 @@ a:hover, a:active {
 				<tbody>
 					<tr>
 						<td><c:out value="${row.emp_id}" /></td>
-						<td><c:out value="${row.emp_name}" /></td>
-						<td><c:out value="${row.doj}" /></td>
-						<td><c:out value="${row.dob}" /></td>
-						<td><c:out value="${row.emp_dept}" /></td>
-						<td><c:out value="${row.emp_desg}" /></td>
+						<td><c:out value="${row.name}" /></td>
+						<td><c:out value="${row.mobile}" /></td>
+						<td><c:out value="${row.department}" /></td>
+						<td><c:out value="${row.status}" /></td>
+						<td><c:out value="${row.email}" /></td>
 						<td><select onChange="window.location.href=this.value">
 								<option>Select Action</option>
-								<option value="editemployee.jsp">Edit</option>
-								<option value="deleteEmployee.jsp">Delete</option>
+								<option value="EditEmployeeServlet?emp_id=${row.emp_id}">Edit</option>
+								<option value="DeleteEmployeeServlet?emp_id=${row.emp_id}">Delete</option>
 						</select>
 					</tr>
 				</tbody>
