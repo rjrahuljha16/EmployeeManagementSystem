@@ -2,20 +2,16 @@ package com.srs.bean;
 
 public class EmployeeBean {
 
-
-
-
 	private String emp_id;
-	public EmployeeBean() {
-		super();
-	}
-
 	private String name;
 	private String mobile;
 	private String department;
 	private String status;
 	private String email;
-	
+
+	public EmployeeBean() {
+		super();
+	}
 
 	public String getEmp_id() {
 		return emp_id;

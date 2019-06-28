@@ -75,6 +75,4 @@ public class UserBean {
 				+ ", password=" + password + ", secqQuestion=" + secqQuestion + ", secqAnswer=" + secqAnswer + "]";
 	}
 
-	
-	
 }

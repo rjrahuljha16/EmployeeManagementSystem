@@ -23,11 +23,10 @@ public class UserRegistrationServlet extends HttpServlet {
 
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+	/**
+	 * SignUp opertaion::This method will read data from user registration page and
+	 * store the data in database and redirect the page to loginform
+	 */
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -46,16 +45,18 @@ public class UserRegistrationServlet extends HttpServlet {
 			System.out.println("Connection done");
 			UserBean user = UserDao.registerEmployee(conn, firstname, lastname, number, email, password, secqQuestion,
 					secqAnswer);
-			if(user==null)
-			{
-				errorString="Registration failed";
-				
+			if (user == null) {
+				errorString = "Oops Something went Wrong!! Registration failed.";
+
 				request.setAttribute("errorString", errorString);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("registration.jsp");
 				dispatcher.forward(request, response);
-			}
-			else {
-				response.sendRedirect("loginform.jsp");
+			} else {
+				errorString = "Registration Done Succefully! Please Login.";
+				request.setAttribute("errorString", errorString);
+
+				RequestDispatcher dispatcher = request.getRequestDispatcher("loginform.jsp");
+				dispatcher.forward(request, response);
 			}
 
 		} catch (Exception e) {

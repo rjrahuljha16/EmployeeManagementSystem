@@ -7,6 +7,8 @@ import com.srs.bean.UserBean;
 
 public class UserDao {
 
+	// Query to get the user details from table for login validation
+
 	public static UserBean userLogin(Connection conn, String email, String password) throws Exception {
 		String sql = "select u.first_name,u.password from user u where u.email_id=? and u.password=?";
 		PreparedStatement pst = conn.prepareStatement(sql);
@@ -24,10 +26,24 @@ public class UserDao {
 		return null;
 	}
 
+
+	/**
+	 * @param conn
+	 * @param firstname
+	 * @param lastname
+	 * @param number
+	 * @param email
+	 * @param password
+	 * @param secqQuestion
+	 * @param secqAnswer
+	 * @return
+	 * @throws Exception
+	 * To register new User
+	 */
 	public static UserBean registerEmployee(Connection conn, String firstname, String lastname, String number,
 			String email, String password, String secqQuestion, String secqAnswer) throws Exception {
-		String sql="insert into user values(?,?,?,?,?,?,?)";
-		PreparedStatement pst=conn.prepareStatement(sql);
+		String sql = "insert into user values(?,?,?,?,?,?,?)";
+		PreparedStatement pst = conn.prepareStatement(sql);
 		pst.setString(1, firstname);
 		pst.setString(2, lastname);
 		pst.setString(3, number);
@@ -35,10 +51,9 @@ public class UserDao {
 		pst.setString(5, password);
 		pst.setString(6, secqQuestion);
 		pst.setString(7, secqAnswer);
-		int result=pst.executeUpdate();
-		if(result>0)
-		{
-			UserBean user= new UserBean();
+		int result = pst.executeUpdate();
+		if (result > 0) {
+			UserBean user = new UserBean();
 			user.setFirstName(firstname);
 			user.setLastName(lastname);
 			user.setNumber(number);

@@ -12,6 +12,12 @@
 	<div class="main">
 
 		<div>
+		
+		<div class="error">
+		<p style="color:red;text-align:center;">${errorString}</p>
+		</div>
+		
+		
 
 			<form action="LoginServlet" method="post">
 				<h2><p align="center">Sign In</p><h2>

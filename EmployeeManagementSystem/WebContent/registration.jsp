@@ -42,26 +42,26 @@ table {
 					<td>
 						<div class="float">
 							<input type="text" name="firstname" placeholder="First Name*"
-								required="requried">
+								required="required">
 						</div>
 					</td>
 					<td>
 						<div>
 							<input type="text" name="lastname" placeholder="Last Name*"
-								requried="requried">
+								required="required">
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<div class="float">
-							<input type="text" name="number" placeholder="Phone Number">
+							<input type="text" name="number" placeholder="Phone Number*" required="required">
 						</div>
 					</td>
 					<td>
 						<div>
 							<input type="email" name="email" placeholder="Your Email*"
-								requried="requried">
+								required="required">
 						</div>
 					</td>
 				</tr>
@@ -69,21 +69,21 @@ table {
 					<td>
 						<div class="float">
 							<input type="password" name="password" placeholder="Password*"
-								requried="requried">
+								required="required">
 						</div>
 					</td>
 					<td>
 						<div>
 							<input type="password" name="password"
-								placeholder="Confirm Password*" requried="requried">
+								placeholder="Confirm Password*" required="required">
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<div class="float">
-							<select name="question">
-								<option>Please Select Your Security Question</option>
+							<select name="question" required="required" >
+								<option>Please Select Your Security Question*</option>
 								<option value="What is your Nickname?">What is your
 									Nickname?</option>
 								<option value="what is your pet name?">what is your pet
@@ -94,8 +94,8 @@ table {
 					<td>
 
 						<div class="float">
-							<input type="text" name="answer" placeholder="Enter Your Answer"
-								requried="requried">
+							<input type="text" name="answer" placeholder="Enter Your Answer*"
+								required="required">
 						</div>
 					</td>
 				</tr>

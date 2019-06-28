@@ -16,11 +16,38 @@ table {
 	background-color: #00e6e6;
 	font-family: calibri;
 }
+
+.home a:link, a:visited {
+	background-color: white;
+	color: black;
+	border: 2px solid lightblue;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	width: 30%;
+	margin: 10px;
+	margin-bottom: 0px;
+}
+
+.home a:hover, a:active {
+	background-color: lightblue;
+	color: white;
+}
+
+.home {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+}
 </style>
 </head>
 <body>
 	<%@include file="header.jsp"%>
 	<%@include file="dropdown.html"%>
+	<div class="home">
+		<a href="LoginServlet">Home</a>
+	</div>
 
 	<div class="table">
 		<form action="EditEmployeeServlet" method="post">
@@ -38,34 +65,37 @@ table {
 				<tr>
 					<td><label>Name</label></td>
 					<td><input type="text" value="${employee.name}" name="name"
-						requried="requried"></td>
-				</tr>
-				<tr>
-					<td><label>Department</label></td>
-					<td><select name="department">
-							
-							<option value="1">Devlopment</option>
-							<option value="2">Admin</option>
-							<option value="3">Testing</option>
-
-
-					</select></td>
-
+						required="required"></td>
 				</tr>
 				<tr>
 					<td><label>Mobile</label></td>
-					<td><input type="text" value="${employee.department}"
-						name="mobile" requried="requried"></td>
+					<td><input type="text" value="${employee.mobile}"
+						name="mobile" required="required"></td>
+				</tr>
+
+
+
+				<tr>
+					<td><label>Department</label></td>
+
+					<td><select name="department">
+							<option>${employee.department}</option>
+							<option value="devlopment">Devlopment</option>
+							<option value="Admin">Admin</option>
+							<option value="Testing">Testing</option>
+					</select></td>
+
+
 				</tr>
 				<tr>
 					<td><label>Status</label></td>
 					<td><input type="text" value="${employee.status}"
-						name="status" requried="requried"></td>
+						name="status" required="required"></td>
 				</tr>
 				<tr>
 					<td><label>Email</label></td>
 					<td><input type="email" value="${employee.email}" name="email"
-						requried="requried"></td>
+						required="required"></td>
 				</tr>
 				<tr>
 					<td><input type="submit" value="Update Employee"></td>

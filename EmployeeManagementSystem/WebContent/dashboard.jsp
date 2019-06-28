@@ -10,18 +10,24 @@
 <meta charset="ISO-8859-1">
 <title>Employee Management System</title>
 <style type="text/css">
-.tabledata {
-	position: absolute;
-	top: 10%;
-	left: 28%;
+.tabledata{
+position:absolute;
+left:25%;
+top:15%;
+width:650px;
+height:435px;
+display:block;
+overflow:auto;
 }
+
+
 
 .menulink {
 	position: absolute;
 	top: 20%;
 }
 
-a:link, a:visited {
+.menulink a:link, a:visited {
 	background-color: white;
 	color: black;
 	border: 2px solid lightblue;
@@ -34,10 +40,11 @@ a:link, a:visited {
 	margin-bottom: 0px;
 }
 
-a:hover, a:active {
+.menulink a:hover, a:active {
 	background-color: lightblue;
 	color: white;
 }
+
 </style>
 </head>
 <body>
@@ -46,8 +53,7 @@ a:hover, a:active {
 
 	<div class="menulink">
 
-		<a href="addemployee.jsp">Register New Employee</a><br> <a
-			href="TableServlet">List of All Employees</a>
+		<a href="AddEmployee">Register New Employee</a>
 	</div>
 
 	<div class="tabledata">

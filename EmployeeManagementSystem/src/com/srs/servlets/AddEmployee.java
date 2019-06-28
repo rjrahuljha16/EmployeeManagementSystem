@@ -2,6 +2,7 @@ package com.srs.servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.srs.bean.DepartmentBean;
 import com.srs.bean.EmployeeBean;
 import com.srs.conn.ConnectionUtils;
 import com.srs.dao.EmployeeDao;
@@ -25,14 +27,27 @@ public class AddEmployee extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		try {
+			Connection conn = ConnectionUtils.getMySQLConnection();
+			List<DepartmentBean> deptList = EmployeeDao.findDepartment(conn);
+			request.setAttribute("deptList", deptList);
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("addemployee.jsp");
+			dispatcher.forward(request, response);
+
+		} catch (Exception e) {
+			System.out.println("Add employee Get block exception");
+			e.printStackTrace();
+		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("name");
 		String mobile = request.getParameter("mobile");
+		System.out.println("Add employee page::Printing dept "+mobile);
+
 		String department = request.getParameter("department");
 		String status = request.getParameter("status");
 		String email = request.getParameter("email");
@@ -47,10 +62,9 @@ public class AddEmployee extends HttpServlet {
 				request.setAttribute("errorString", errorString);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("addemployee.jsp");
 				dispatcher.forward(request, response);
-			}
-			else {
-				String successString="Employee Added Succesfully";
-				
+			} else {
+				String successString = "Employee Added Succesfully";
+
 				request.setAttribute("errorString", successString);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("addemployee.jsp");
 				dispatcher.forward(request, response);

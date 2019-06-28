@@ -26,6 +26,8 @@ public class LoginServlet extends HttpServlet {
 		super();
 	}
 
+	// whenever a Get method request will come this part of code will run.
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
@@ -42,6 +44,10 @@ public class LoginServlet extends HttpServlet {
 		}
 
 	}
+
+	// Read the data from loginform page and validate the user and if successful it
+	// will send to dashboard and if not send back to same loginform page with
+	// errorString
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
