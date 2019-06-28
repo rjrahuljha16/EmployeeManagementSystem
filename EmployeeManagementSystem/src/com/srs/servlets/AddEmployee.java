@@ -16,7 +16,6 @@ import com.srs.bean.EmployeeBean;
 import com.srs.conn.ConnectionUtils;
 import com.srs.dao.EmployeeDao;
 
-@WebServlet("/AddEmployee")
 public class AddEmployee extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

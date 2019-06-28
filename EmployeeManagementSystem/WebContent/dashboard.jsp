@@ -53,7 +53,7 @@ overflow:auto;
 
 	<div class="menulink">
 
-		<a href="AddEmployee">Register New Employee</a>
+		<a href="addemployee">Register New Employee</a>
 	</div>
 
 	<div class="tabledata">
@@ -84,8 +84,8 @@ overflow:auto;
 						<td><c:out value="${row.email}" /></td>
 						<td><select onChange="window.location.href=this.value">
 								<option>Select Action</option>
-								<option value="EditEmployeeServlet?emp_id=${row.emp_id}">Edit</option>
-								<option value="DeleteEmployeeServlet?emp_id=${row.emp_id}">Delete</option>
+								<option value="editemployee?emp_id=${row.emp_id}">Edit</option>
+								<option value="deleteemployee?emp_id=${row.emp_id}">Delete</option>
 						</select>
 					</tr>
 				</tbody>

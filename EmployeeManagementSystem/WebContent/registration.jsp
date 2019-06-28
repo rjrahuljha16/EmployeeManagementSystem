@@ -33,7 +33,7 @@ table {
 <body>
 	<%@include file="header.jsp"%>
 	<div class="main">
-		<form action="UserRegistrationServlet" method="post">
+		<form action="registeruser" method="post">
 			<h2>
 				<p style="text-align: center;">Registration</p>
 			</h2>

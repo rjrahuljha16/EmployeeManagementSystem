@@ -19,7 +19,7 @@
 		
 		
 
-			<form action="LoginServlet" method="post">
+			<form action="home" method="post">
 				<h2><p align="center">Sign In</p><h2>
 
 				<div class="input-container">

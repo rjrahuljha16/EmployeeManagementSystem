@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,11 +48,11 @@ table {
 	<%@include file="header.jsp"%>
 	<%@include file="dropdown.html"%>
 	<div class="home">
-		<a href="LoginServlet">Home</a>
+		<a href="home">Home</a>
 	</div>
 
 	<div class="table">
-		<form action="EditEmployeeServlet" method="post">
+		<form action="editemployee" method="post">
 			<h3>
 				<p style="text-align: center;">Edit Employee</p>
 			</h3>
@@ -79,11 +81,26 @@ table {
 					<td><label>Department</label></td>
 
 					<td><select name="department">
-							<option>${employee.department}</option>
-							<option value="devlopment">Devlopment</option>
-							<option value="Admin">Admin</option>
-							<option value="Testing">Testing</option>
+							<!-- <option>${employee.department}</option> -->
+							<option value="devlopment" <%=request.getAttribute("0")%>>Devlopment</option>
+							<option value="Admin" <%=request.getAttribute("1")%>>Admin</option>
+							<option value="Testing" <%=request.getAttribute("2")%>>Testing</option>
+							<option value="Hr" <%=request.getAttribute("3")%>>Hr</option>
 					</select></td>
+
+					<!-- 
+					<td><select name="department">
+							<c:forEach var="row" items="${deptList}">
+								<option value="<c:out value="${row.id}" />"
+									<%=request.getAttribute("0")%> 
+									<%=request.getAttribute("1")%>
+									<%=request.getAttribute("2")%> 
+									<%=request.getAttribute("3")%>>
+									<c:out value="${row.department}"></c:out>
+								</option>
+							</c:forEach>
+					</select></td>
+ -->
 
 
 				</tr>

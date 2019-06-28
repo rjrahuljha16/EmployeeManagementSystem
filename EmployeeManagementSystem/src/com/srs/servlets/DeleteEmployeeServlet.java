@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.srs.conn.ConnectionUtils;
 import com.srs.dao.EmployeeDao;
 
-@WebServlet("/DeleteEmployeeServlet")
 public class DeleteEmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -32,7 +31,7 @@ public class DeleteEmployeeServlet extends HttpServlet {
 			Connection conn = ConnectionUtils.getMySQLConnection();
 			EmployeeDao.deleteEmployee(conn, emp_id);
 
-			response.sendRedirect("LoginServlet");
+			response.sendRedirect("home");
 
 		} catch (Exception e) {
 			System.out.println("Delete servlet exception");

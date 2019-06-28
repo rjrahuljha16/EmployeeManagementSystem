@@ -14,7 +14,6 @@ import com.srs.bean.UserBean;
 import com.srs.conn.ConnectionUtils;
 import com.srs.dao.UserDao;
 
-@WebServlet("/UserRegistrationServlet")
 public class UserRegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -18,7 +18,7 @@ import com.srs.conn.ConnectionUtils;
 import com.srs.dao.EmployeeDao;
 import com.srs.dao.UserDao;
 
-@WebServlet("/LoginServlet")
+//@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

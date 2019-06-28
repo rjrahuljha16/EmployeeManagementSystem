@@ -54,7 +54,7 @@ table {
 		<div>
 			<p>${errorString}</p>
 		</div>
-		<form action="AddEmployee" method="post">
+		<form action="addemployee" method="post">
 			<h3>
 				<p style="text-align: center;">Employee Registration</p>
 			</h3>
@@ -102,7 +102,7 @@ table {
 		</form>
 	</div>
 	<div class="home">
-		<a href="LoginServlet">Home</a>
+		<a href="home">Home</a>
 	</div>
 
 	<%@include file="footer.jsp"%>
